@@ -1,7 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 from settings import SECRET_KEY
-from cities_list import cities
 import json
 import random
 
@@ -28,7 +27,6 @@ def update_game(bot, update, user_data):
     random.shuffle(cities)
     user_data["state"] = {
         "available_cities": cities, "already_used_cities": []}
-    print(user_data["state"])
 
 
 def game_core(bot, update, user_data, args):
